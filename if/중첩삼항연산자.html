@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>여러가지 중첩 if문</title>
+  </head>
+  <body>
+    <h1>여러가지 중첩 삼항 연산자 실습</h1>
+    <script>
+      //첫번째 삼항연산자의 true 조건에서의 중첩, 두번째 삼항연산자의 false 조건이 결과값인 경우.
+      let condition1 = 1;
+      let condition2 = 0;
+      let value = condition1
+        ? condition2
+          ? "조건1, 2 둘다 참"
+          : "조건1은 참, 조건2는 거짓"
+        : "조건1은 거짓";
+      console.log(value);
+      // 첫번째 삼항연산자의 true 조건에서의 중첩, 두번째 삼항연산자의 true 조건이 결과값인 경우.
+      let condition1 = 1;
+      let condition2 = 1;
+      let value = condition1
+        ? condition2
+          ? "조건1, 2 둘다 참"
+          : "조건1은 참, 조건2는 거짓"
+        : "조건1은 거짓";
+      console.log(value);
+      // 첫번째 삼항연산자의 false 조건에서의 중첩, 두번째 삼항연산자의 false 조건이 결과값인 경우.
+      let condition1 = 0;
+      let condition2 = 0;
+      let value = condition1
+        ? "조건1이 참"
+        : condition2
+        ? "조건2만 참"
+        : "조건1, 2 둘 다 거짓";
+      console.log(value);
+      // 첫번째 삼항연산자의 false 조건에서의 중첩, 두번째 삼항연산자의 true 조건이 결과값인 경우.
+      let condition1 = 0;
+      let condition2 = 1;
+      let value = condition1
+        ? "조건1이 참"
+        : condition2
+        ? "조건2만 참"
+        : "조건1, 2 둘 다 거짓";
+      console.log(value);
+    </script>
+  </body>
+</html>
