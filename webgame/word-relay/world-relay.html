@@ -21,8 +21,7 @@
       let newWord; // 현재 단어
 
       const onClickButton = () => {
-        if (!word) {
-          // 제시어가 비어 있으면
+        if (!word || word[word.length - 1] === newWord[0]) {
           word = newWord; // 현재 단어(newWord)가 제시어(word)가 된다.
           $word.textContent = word; // html상에 제시어 부분(id="word")에 현재 입력한 단어로 값을 줌.
           const order = Number($order.textContent);
@@ -34,26 +33,9 @@
           $input.value = '';
           $input.focus();
         } else {
-          if (word[word.length - 1] === newWord[0]) {
-            // 입력한 단어가 올바른가
-            // 올바른 단어를 입력한 경우
-            word = newWord;
-            $word.textContent = word;
-            const order = Number($order.textContent);
-            if (order + 1 > number) {
-              $order.textContent = 1;
-              $input.value = '';
-              $input.focus();
-            } else {
-              $order.textContent = order + 1;
-              $input.value = '';
-              $input.focus();
-            }
-          } else {
-            alert('올바른 단어가 아닙니다!'); // 틀린 단어 입력시 경고창 출력
-            $input.value = '';
-            $input.focus();
-          }
+          alert('올바른 단어가 아닙니다!'); // 틀린 단어 입력시 경고창 출력
+          $input.value = '';
+          $input.focus();
         }
       };
       const onInput = (event) => {
