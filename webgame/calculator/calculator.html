@@ -61,12 +61,14 @@
     const $operator = document.querySelector('#operator');
     const $result = document.querySelector('#result');
     const onClickNumber = (number) => {
-      if (operator) {
-        numTwo += number;
-      } else {
-        numOne += number;
-      }
-      $result.value += number;
+      return () => {
+        if (operator) {
+          numTwo += number;
+        } else {
+          numOne += number;
+        }
+        $result.value += number;
+      };
     };
     document
       .querySelector('#num-0')
