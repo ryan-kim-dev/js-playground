@@ -54,5 +54,19 @@
     <button id="calculate">=</button>
     <button id="multiply">x</button>
   </div>
-  <script></script>
+  <script>
+    let numOne = '';
+    let operator = '';
+    let numTwo = '';
+    const $operator = document.querySelector('#operator');
+    const $result = document.querySelector('#result');
+    document.querySelector('#num-0').addEventListener('click', () => {
+      if (operator) {
+        numTwo = '0';
+      } else {
+        numOne = '0';
+      }
+    });
+    document.querySelector('#num-1').addEventListener('click', () => {});
+  </script>
 </body>
