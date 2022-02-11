@@ -88,10 +88,18 @@
       }
     };
 
-    document.querySelector('#plus').addEventListener('click', () => {});
-    document.querySelector('#minus').addEventListener('click', () => {});
-    document.querySelector('#divide').addEventListener('click', () => {});
-    document.querySelector('#multiply').addEventListener('click', () => {});
+    document
+      .querySelector('#plus')
+      .addEventListener('click', onClickOperator('+'));
+    document
+      .querySelector('#minus')
+      .addEventListener('click', onClickOperator('-'));
+    document
+      .querySelector('#divide')
+      .addEventListener('click', onClickOperator('/'));
+    document
+      .querySelector('#multiply')
+      .addEventListener('click', onClickOperator('*'));
     document.querySelector('#calculate').addEventListener('click', () => {});
     document.querySelector('#clear').addEventListener('click', () => {});
   </script>
