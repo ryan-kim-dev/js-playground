@@ -79,6 +79,15 @@
     document.querySelector('#num-0').addEventListener('click', onClickNumber);
     document.querySelector('#num-0').addEventListener('click', onClickNumber);
 
+    const onClickOperator = (op) => {
+      if (numOne) {
+        operator = op;
+        $operator.value = op;
+      } else {
+        alert('숫자를 먼저 입력하세요.');
+      }
+    };
+
     document.querySelector('#plus').addEventListener('click', () => {});
     document.querySelector('#minus').addEventListener('click', () => {});
     document.querySelector('#divide').addEventListener('click', () => {});
