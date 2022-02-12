@@ -86,11 +86,29 @@
     document.querySelector('#num-9').addEventListener('click', onClickNumber);
 
     const onClickOperator = (op) => () => {
-      if (numOne) {
-        if (numTwo) {
-          numOne = parseInt($result.value);
-          numTwo = '';
+      if (numTwo) {
+        switch (operator) {
+          case '+':
+            $result.value = parseInt(numOne) + parseInt(numTwo);
+            break;
+          case '-':
+            $result.value = numOne - numTwo;
+            break;
+          case '*':
+            $result.value = numOne * numTwo;
+            break;
+          case '/':
+            $result.value = numOne / numTwo;
+            break;
+          default:
+            break;
         }
+        $operator.value = '';
+        numOne = $result.value;
+        operator = '';
+        numTwo = '';
+      }
+      if (numOne) {
         operator = op;
         $operator.value = op;
       } else {
@@ -127,6 +145,9 @@
           default:
             break;
         }
+
+        numOne = $result.value;
+        numTwo = '';
       } else {
         alert('숫자를 입력하세요.');
       }
