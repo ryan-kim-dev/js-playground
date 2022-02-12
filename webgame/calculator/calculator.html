@@ -106,20 +106,19 @@
       .querySelector('#multiply')
       .addEventListener('click', onClickOperator('*'));
     document.querySelector('#calculate').addEventListener('click', () => {
-      if (numTwo) {
-        if (operator !== '+') {
-          if (operator === '-') {
-            $result.value = numOne - NumTwo;
-          } else if (operator === '*') {
-            $result.value = numOne * numTwo;
-          } else if (operator === '/') {
-            $result.value = numOne / numTwo;
-          }
-        } else {
+      switch (operator) {
+        case '+':
           $result.value = parseInt(numOne) + parseInt(numTwo);
-        }
-      } else {
-        alert('숫자를 입력하세요.');
+          break;
+        case '-':
+          $result.value = numOne - numTwo;
+          break;
+        case '*':
+          $result.value = numOne * numTwo;
+          break;
+        case '/':
+          $result.value = numOne / numTwo;
+          break;
       }
     });
     document.querySelector('#clear').addEventListener('click', () => {});
