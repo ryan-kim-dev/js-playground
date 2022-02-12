@@ -87,6 +87,10 @@
 
     const onClickOperator = (op) => () => {
       if (numOne) {
+        if (numTwo) {
+          numOne = parseInt($result.value);
+          numTwo = '';
+        }
         operator = op;
         $operator.value = op;
       } else {
