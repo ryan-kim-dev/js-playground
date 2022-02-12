@@ -86,6 +86,11 @@
     document.querySelector('#num-9').addEventListener('click', onClickNumber);
 
     const onClickOperator = (op) => () => {
+      if (op === '-' && !numOne) {
+        numOne += op;
+        $result.value = op;
+        return;
+      }
       if (numTwo) {
         switch (operator) {
           case '+':
