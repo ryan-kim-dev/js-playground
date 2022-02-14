@@ -17,12 +17,18 @@
       const $form = document.querySelector('#form');
       const $logs = document.querySelector('#logs');
 
-      const numbers = [];
+      const numbers = []; // 뽑을 수 있는 숫자들의 배열 [1, 2, 3, 4, 5, 6, 7, 8, 9]
       for (let n = 0; n < 9; n += 1) {
-        numbers.push(n + 1);
+        numbers.push(n + 1); // 1~9가 나와야 하는데 0부터 시작했기 때문에 + 1 해야 함.
       }
 
-      const answer = [];
+      const answer = []; // [num1, num2, num3, num4]
+      for (let n = 0; n < 4; n += 1) {
+        // 숫자를 4개 뽑아야 하므로 4번 반복/ 0,1,2,3 = 4개이므로 4번 반복됨.
+        const index = Math.floor(Math.random() * numbers.length); // 랜덤하게 숫자 하나 뽑고 뽑을 때마다 경우의 수가 줄어드니 *number.length 해줘야 배열의 범위가 바뀌는 대로 대응 가능.
+        answer.push(numbers[index]); // 정답의 배열에 뽑은 숫자를 추가
+        numbers.splice(index, 1); // 숫자를 뽑았으니 뽑은 숫자를 numbers 배열에서 제거
+      }
     </script>
   </body>
 </html>
