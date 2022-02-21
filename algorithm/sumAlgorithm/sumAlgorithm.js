@@ -5,7 +5,7 @@ let scores = [100, 75, 50, 37, 90, 95];
 let sum = 0; // 합계가 담길 그릇(변수)
 let N = scores.length; // 의사코드
 // process
-for (let i = 0; i < scores.length; i++) {
+for (let i = 0; i < N; i++) {
   if (scores[i] >= 80) {
     sum += scores[i];
   }
