@@ -32,10 +32,13 @@ func1(func2); // func1 함수를 실행하는데 매개변수로 func2함수를 
 // 1
 // 2
 
-// * 고차함수의 반환값에서 콜백함수 사용 예제.(코플릿 18번)
-function getOnlyNames(arr) {
-  // * 리턴값에 arr.map 해서 콜백함수 안에서 return arr.name;
-  return arr.map((e) => {
-    return e.name;
+// * 비동기 처리에서의 고차함수와 콜백함수 사용 예제
+const getDataFromFilePromise = (filePath) => {
+  // return new Promise()
+  // TODO: Promise 및 fs.readFile을 이용해 작성합니다.
+  return new Promise((resolve, reject) => {
+    fs.readFile(filePath, 'utf-8', (err, data) => {
+      err ? reject(err) : resolve(data);
+    });
   });
-}
+};
